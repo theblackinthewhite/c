@@ -1,0 +1,31 @@
+# Project: 3.c
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = 4.o 11111111.o
+LINKOBJ  = 4.o 11111111.o
+LIBS     = -L"D:/data/Dev-Cpp/MinGW64/lib" -L"D:/data/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -mwindows
+INCS     = -I"D:/data/Dev-Cpp/MinGW64/include" -I"D:/data/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/data/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/data/Dev-Cpp/MinGW64/include" -I"D:/data/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/data/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/data/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 3.c.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+4.o: 4.c
+	$(CC) -c 4.c -o 4.o $(CFLAGS)
+
+11111111.o: 11111111.c
+	$(CC) -c 11111111.c -o 11111111.o $(CFLAGS)

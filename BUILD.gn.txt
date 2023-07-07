@@ -1,0 +1,10 @@
+static_library("demo") {#第一行指定编译生成的静态库目标名字为demo
+    sources = [#指定编译需要的c文件
+        "demo.c"
+    ]   
+#下面的语句作用是告诉编译器c文件中使用的头文件所在的文件路径
+    include_dirs = [
+        "//utils/native/lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+    ]
+}
